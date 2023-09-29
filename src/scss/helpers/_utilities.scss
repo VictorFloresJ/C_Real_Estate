@@ -1,0 +1,32 @@
+@use "variables" as v;
+
+.section {
+    margin-top: calc(v.$gap / 2);
+    margin-bottom: calc(v.$gap / 2);
+}
+
+.center-content {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.no-select {
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+}
+
+.align-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.justify-text { text-align: justify; }
+
+.uppercase-text { text-transform: uppercase; }
+
+.w-100 { width: 100%; }
