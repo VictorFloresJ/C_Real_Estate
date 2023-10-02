@@ -29,3 +29,19 @@
     grid-template-columns: repeat($columns, 1fr);
     gap: $gap;
 }
+
+@mixin button($color, $display) {
+    background-color: $color;
+    color: white;
+    font-weight: v.$bold;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: calc(v.$gap / 2);
+    display: $display;
+    border: none;
+    &:hover {
+        background-color: darken($color, 5);
+        cursor: pointer;
+    }
+}

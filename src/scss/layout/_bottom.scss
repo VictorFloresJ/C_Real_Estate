@@ -1,0 +1,59 @@
+@use "helpers/variables" as v;
+@use "helpers/mixins" as m;
+
+@include m.tablet {
+    .section-bottom {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 2rem;
+    }
+}
+
+.blog-post {
+    margin-bottom: 2rem;
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+        align-items: center;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    img {
+        height: auto;
+    }
+}
+
+.post-text {
+    a {
+        display: block;
+        margin-top: 2rem;
+        @include m.tablet {
+            margin-top: 0;
+        }
+    }
+    h4 {
+        color: v.$black;
+        margin: 0;
+        line-height: 1.4;
+        &::after{
+            content: "";
+            display: block;
+            margin-top: 1rem;
+            width: 15rem;
+            height: 0.5rem;
+            background-color: v.$green;
+        }
+    }
+    a {
+        color: v.$black;
+    }
+}
+
+.meta-information {
+    span {
+        color: v.$yellow;
+        font-weight: v.$bold;
+    }
+}

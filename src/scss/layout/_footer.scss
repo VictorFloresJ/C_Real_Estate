@@ -1,0 +1,15 @@
+@use "helpers/variables" as v;
+@use "helpers/mixins" as m;
+
+.footer {
+    background-color: v.$darkGray;
+    padding: calc(v.$gap / 2) 0;
+    .content-footer {
+        padding-top: calc(v.$gap / 2);
+    }
+    .copyright {
+        text-align: center;
+        color: v.$white;
+    }
+    margin-bottom: 0;
+}

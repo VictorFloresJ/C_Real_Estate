@@ -1,0 +1,36 @@
+@use "helpers/variables" as v;
+@use "helpers/mixins" as m;
+
+.no-webp .home {
+    background-image: url('/build/img/header.webp');
+}
+
+.webp .home {
+    background-image: url('/build/img/header.jpg');
+}
+
+.header {
+    background-color: v.$darkGray;
+    padding: 1rem 0 3rem 0;
+    &.home {
+        background-position: center center;
+        background-size: cover;
+         @include m.tablet { min-height: 70rem; }
+         .content-header {
+            @include m.tablet { min-height: 70rem; }
+         }
+    }
+}
+
+.content-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h1 {
+        text-align: left;
+        color: v.$white;
+        font-weight: v.$bold;
+        line-height: 2;
+        max-width: 55rem;
+    }
+}

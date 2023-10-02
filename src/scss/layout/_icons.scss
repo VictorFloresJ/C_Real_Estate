@@ -1,0 +1,18 @@
+@use "helpers/variables" as v;
+@use "helpers/mixins" as m;
+
+.aboutus-icons {
+    @include m.tablet {
+        @include m.grid(3, 2rem);
+    }
+}
+
+.icon {
+    text-align: center;
+    img {
+        height: 10rem;
+    }
+    h3 {
+        text-transform: uppercase;
+    }
+}

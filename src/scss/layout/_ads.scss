@@ -1,0 +1,47 @@
+@use "helpers/variables" as v;
+@use "helpers/mixins" as m;
+
+@include m.tablet {
+    .container-ads {
+        @include m.grid(3, 2rem);
+    }
+}
+
+.ad {
+    background-color: lighten(v.$gray, 5);
+    border: 1px solid darken(v.$gray, 5);
+
+    .content-ad {
+        padding:2rem;
+    }
+
+    h3, p {
+        margin: 0;
+    }
+
+}
+
+.price {
+    color: v.$green;
+    font-weight: v.$bold;
+    font-size: 3rem;
+}
+
+.characteristics-icons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 40rem;
+    li {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        img {
+            flex: 0 0 3rem;
+            margin-right: 1rem;
+        }
+
+        p {
+            font-weight: v.$bold;
+        }
+    }
+}
