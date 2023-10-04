@@ -1,0 +1,43 @@
+@use "helpers/variables" as v;
+@use "helpers/mixins" as m;
+
+.dark-mode {
+    background-color: darken(v.$darkGray, 10);
+    p {
+        color: v.$white;
+    }
+    a, h1, h2, h3, h4 {
+        color: v.$gray;
+    }
+
+    .ad {
+        background-color: v.$darkGray;
+        border: 1px solid v.$darkGray;
+    }
+    .price {
+        color: v.$green;
+    }
+
+    .characteristics-icons li > img { // Card Icons
+        filter: invert(100%);
+    }
+
+    .aboutus-text blockquote {
+        color: v.$white;
+    }
+
+    .form {
+        label,
+        legend,
+        p {
+            color: v.$gray;
+        }
+        input:not([type="submit"]),
+        textarea,
+        select {
+            border: 1px solid v.$darkGray;
+            background-color: v.$darkGray;
+            color: v.$white;
+        }
+    }
+}

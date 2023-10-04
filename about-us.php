@@ -17,12 +17,19 @@
                 <a href="/">
                     <img src="./build/img/logo.svg" alt="page logo">
                 </a>
-                <nav class="nav">
-                    <a href="about-us.php">About us</a>
-                    <a href="ads.php">Adversiments</a>
-                    <a href="blog.php">Blog</a>
-                    <a href="contact-us.php">Contact us</a>
-                </nav>
+                <div class="mobile-menu">
+                    <img src="build/img/barras.svg" alt="responsive menu icon">
+                </div>
+
+                <div class="right">
+                    <img src="build/img/dark-mode.svg" alt="dark mode icon" class="dark-mode-button">
+                    <nav class="nav">
+                        <a href="about-us.php">About us</a>
+                        <a href="ads.php">Adversiments</a>
+                        <a href="blog.php">Blog</a>
+                        <a href="contact-us.php">Contact us</a>
+                    </nav>
+                </div>
             </div> <!--.bar-->
         </div><!--.content-header-->
     </header><!--.header-->
@@ -84,9 +91,11 @@
         </div>
     </footer>
 
-
     <!--Modernizr (Webp) -->
     <script src="./build/js/modernizr.js"></script>
+
+    <!--app.js-->
+    <script src="./build/js/app.js"></script>
 </body>
 
 </html>

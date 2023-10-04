@@ -10,7 +10,7 @@
 .ad {
     background-color: lighten(v.$gray, 5);
     border: 1px solid darken(v.$gray, 5);
-
+    margin-bottom: 2rem;
     .content-ad {
         padding:2rem;
     }
@@ -34,7 +34,7 @@
     li {
         flex: 1;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         img {
             flex: 0 0 3rem;
             margin-right: 1rem;
