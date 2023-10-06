@@ -1,0 +1,18 @@
+@use "helpers/variables" as v;
+@use "helpers/mixins" as m;
+
+.alert {
+    padding: 0.5rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: v.$white;
+    font-weight: v.$bold;
+    text-transform: uppercase;
+
+    &.error {
+        background-color: v.$red;
+    }
+    &.correct {
+        background-color: v.$green;
+    }
+}

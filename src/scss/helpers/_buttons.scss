@@ -16,3 +16,11 @@
 .button-green-block {
     @include m.button(v.$green, block);
 }
+
+.button-red {
+    @include m.button(v.$red, inline-block);
+}
+
+.button-red-block {
+    @include m.button(v.$red, block);
+}
