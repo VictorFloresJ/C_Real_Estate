@@ -1,5 +1,10 @@
 <?php 
-$id = $_GET["id"];
+
+$id = filter_var($_GET["id"], FILTER_VALIDATE_INT);
+if (!$id) {
+    header("Location: /admin");
+}
+
 
 require "../../includes/config/database.php";
 $db = connectDB();
@@ -16,4 +21,5 @@ mysqli_query($db, $query);
 
 
 header("Location: /admin?message=3");
+
 ?>
