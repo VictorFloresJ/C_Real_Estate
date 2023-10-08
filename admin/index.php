@@ -1,10 +1,15 @@
 <?php
+require '../includes/functions.php';
+$auth = is_auth();
+if (!is_auth()) {
+    header("Location: /");
+}
+
 require "../includes/config/database.php";
 $db = connectDB();
 $query = "SELECT * FROM properties";
 $result = mysqli_query($db, $query);
 
-require '../includes/functions.php';
 include_template("header");
 
 $message = $_GET["message"] ?? null;

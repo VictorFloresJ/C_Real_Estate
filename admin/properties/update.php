@@ -1,4 +1,10 @@
 <?php
+require '../../includes/functions.php';
+$auth = is_auth();
+if (!is_auth()) {
+    header("Location: /");
+}
+
 $property_id = filter_var($_GET["id"], FILTER_VALIDATE_INT);
 if (!$property_id) {
     header("Location: /admin");
@@ -96,7 +102,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-require '../../includes/functions.php';
 include_template("header");
 ?>
 

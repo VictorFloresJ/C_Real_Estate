@@ -1,4 +1,10 @@
 <?php
+require '../../includes/functions.php';
+$auth = is_auth();
+if (!is_auth()) {
+    header("Location: /");
+}
+
 require "../../includes/config/database.php";
 $db = connectDB();
 
@@ -72,7 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-require '../../includes/functions.php';
 include_template("header");
 ?>
 

@@ -1,4 +1,9 @@
 <?php 
+require '../../includes/functions.php';
+$auth = is_auth();
+if (!is_auth()) {
+    header("Location: /");
+}
 
 $id = filter_var($_GET["id"], FILTER_VALIDATE_INT);
 if (!$id) {
