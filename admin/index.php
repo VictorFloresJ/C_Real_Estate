@@ -1,14 +1,10 @@
 <?php
-require '../includes/functions.php';
-$auth = is_auth();
-if (!is_auth()) {
-    header("Location: /");
-}
+require '../includes/app.php';
+is_auth();
 
-require "../includes/config/database.php";
-$db = connectDB();
-$query = "SELECT * FROM properties";
-$result = mysqli_query($db, $query);
+use App\Property;
+
+$properties = Property::all();
 
 include_template("header");
 
@@ -41,20 +37,20 @@ $message = $_GET["message"] ?? null;
             </tr>
         </thead>
         <tbody>
-            <?php while ($property = mysqli_fetch_assoc($result)) : ?>
+            <?php foreach($properties as $property) : ?>
                 <tr>
-                    <td><?php echo $property["id"]; ?></td>
-                    <td><?php echo $property["title"]; ?></td>
+                    <td><?php echo $property->id; ?></td>
+                    <td><?php echo $property->title; ?></td>
                     <td>
-                        <img src="/images/<?php echo $property["image"]; ?>" alt="property image" class="image-table">
+                        <img src="/images/<?php echo $property->image; ?>" alt="property image" class="image-table">
                     </td>
-                    <td><?php echo "$" . $property["price"]; ?></td>
+                    <td><?php echo "$" . $property->price; ?></td>
                     <td>
-                        <a href="/admin/properties/update.php?id=<?php echo $property["id"]; ?>" class="button-yellow-block">Update</a>
-                        <a href="/admin/properties/delete.php?id=<?php echo $property["id"]; ?>" class="button-red-block">Eliminate</a>
+                        <a href="/admin/properties/update.php?id=<?php echo $property->id; ?>" class="button-yellow-block">Update</a>
+                        <a href="/admin/properties/delete.php?id=<?php echo $property->id; ?>" class="button-red-block">Eliminate</a>
                     </td>
                 </tr>
-            <?php endwhile; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </main>

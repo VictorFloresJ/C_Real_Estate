@@ -1,10 +1,11 @@
 <?php
+require "includes/app.php";
+
 $id = filter_var($_GET["id"], FILTER_VALIDATE_INT);
 if (!$id) {
     header("Location: /");
 }
 
-require "includes/config/database.php";
 $db = connectDB();
 
 $query = "SELECT * FROM properties WHERE id = '$id'";
@@ -16,7 +17,6 @@ if ($result->num_rows === 0) {
 
 $property = mysqli_fetch_assoc($result);
 
-require './includes/functions.php';
 include_template("header");
 ?>
 

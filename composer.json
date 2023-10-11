@@ -1,0 +1,19 @@
+{
+    "name": "victo/01_real_estate",
+    "description": "A real estate project using POO.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Victor Flores",
+            "email": "victor_2002fj@hotmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\" : "./classes"
+        }
+    }
+}

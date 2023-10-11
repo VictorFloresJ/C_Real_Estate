@@ -1,8 +1,9 @@
 <?php
+require "includes/app.php";
+
 $errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    require "includes/config/database.php";
     $db = connectDB();
 
     $email = mysqli_real_escape_string($db, filter_var($_POST["email"], FILTER_VALIDATE_EMAIL));
@@ -39,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-require './includes/functions.php';
 include_template("header");
 ?>
 
