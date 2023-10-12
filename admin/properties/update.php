@@ -1,20 +1,20 @@
 <?php
 require '../../includes/app.php';
+is_auth();
 
 use App\Property;
+use App\Seller;
 use Intervention\Image\ImageManagerStatic as Image;
 
-is_auth();
 
 $property_id = filter_var($_GET["id"], FILTER_VALIDATE_INT);
 if (!$property_id) {
     header("Location: /admin");
 }
 
-$query = "SELECT * FROM sellers";
-$result = mysqli_query($db, $query);
+$sellers = Seller::all();
 
-$property = Property::getPropertyById($property_id);
+$property = Property::getRecordById($property_id);
 
 $title = $property->title;
 $price = $property->price;
@@ -28,7 +28,7 @@ $sellers_id = $property->sellers_id;
 $errors = Property::getErrors();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $property->syncProperty($_POST);
+    $property->syncRecord($_POST);
     $errors = $property->valid();
     if (empty($errors)) {
         if ($_FILES["image"]["tmp_name"]) {

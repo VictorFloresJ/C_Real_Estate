@@ -1,18 +1,15 @@
 <?php
 require '../../includes/app.php';
+is_auth();
+
 use App\Property;
+use App\Seller;
 use Intervention\Image\ImageManagerStatic as Image;
 
-is_auth();
-$db = connectDB();
-
-/*Sellers*/
-$query = " SELECT * FROM sellers ";
-$result = mysqli_query($db, $query);
-
-$errors = Property::getErrors();
+$sellers = Seller::all();
 
 $property = new Property();
+$errors = Property::getErrors();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $image = $_FILES["image"];

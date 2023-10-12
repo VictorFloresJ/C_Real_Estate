@@ -8,6 +8,6 @@ $id = filter_var($_GET["id"], FILTER_VALIDATE_INT);
 if (!$id) {
     header("Location: /admin");
 }
-$property = Property::getPropertyById($id);
+$property = Property::getRecordById($id);
 $property->delete();
 ?>

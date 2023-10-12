@@ -3,8 +3,10 @@ require '../includes/app.php';
 is_auth();
 
 use App\Property;
+use App\Seller;
 
 $properties = Property::all();
+$sellers = Seller::all();
 
 include_template("header");
 
@@ -24,8 +26,9 @@ $message = $_GET["message"] ?? null;
         <div class="alert correct">Property deleted correctly</div>
     <?php endif ?>
 
+    
+    <h2 class="no-margin-top">Properties</h2>
     <a href="/admin/properties/create.php" class="button-green">New property</a>
-
     <table class="properties">
         <thead>
             <tr>
@@ -37,7 +40,7 @@ $message = $_GET["message"] ?? null;
             </tr>
         </thead>
         <tbody>
-            <?php foreach($properties as $property) : ?>
+            <?php foreach ($properties as $property) : ?>
                 <tr>
                     <td><?php echo $property->id; ?></td>
                     <td><?php echo $property->title; ?></td>
@@ -48,6 +51,32 @@ $message = $_GET["message"] ?? null;
                     <td>
                         <a href="/admin/properties/update.php?id=<?php echo $property->id; ?>" class="button-yellow-block">Update</a>
                         <a href="/admin/properties/delete.php?id=<?php echo $property->id; ?>" class="button-red-block">Eliminate</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <h2 class="no-margin-bottom">Sellers</h2>
+    <a href="/admin/sellers/create.php" class="button-green">New seller</a>
+    <table class="sellers">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($sellers as $seller) : ?>
+                <tr>
+                    <td><?php echo $seller->id; ?></td>
+                    <td><?php echo $seller->nombre . " " . $seller->apellido; ?></td>
+                    <td><?php echo $seller->phone; ?></td>
+                    <td>
+                        <a href="/admin/sellers/update.php?id=<?php echo $seller->id; ?>" class="button-yellow-block">Update</a>
+                        <a href="/admin/sellers/delete.php?id=<?php echo $seller->id; ?>" class="button-red-block">Eliminate</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

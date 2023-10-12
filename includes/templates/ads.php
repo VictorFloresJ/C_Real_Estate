@@ -1,6 +1,6 @@
 <?php
 use App\Property; 
-$properties = Property::getProperties($limit);
+$properties = Property::getRecords($limit);
 ?>
 
 <div class="container-ads">

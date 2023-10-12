@@ -1,7 +1,8 @@
 @use "helpers/variables" as v;
 @use "helpers/mixins" as m;
 
-table.properties {
+table.properties,
+table.sellers {
     margin-top: 4rem;
     width: 100%;
     border-spacing: 0;

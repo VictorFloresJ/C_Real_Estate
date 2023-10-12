@@ -36,10 +36,10 @@
 
     <select name="sellers_id">
         <option value="" selected disabled>-Select-</option>
-        <?php while ($seller = mysqli_fetch_assoc($result)) : ?>
-            <option <?php echo sanitize($property->sellers_id) === $seller["id"] ? "selected" : " "; ?> value="<?php echo $seller["id"]; ?>">
-                <?php echo $seller['nombre'] . " " . $seller['apellido']; ?>
+        <?php foreach ($sellers as $seller) : ?>
+            <option <?php echo sanitize($property->sellers_id) === $seller->id ? "selected" : " "; ?> value="<?php echo $seller->id; ?>">
+                <?php echo sanitize($seller->nombre . " " . $seller->apellido); ?>
             </option>
-        <?php endwhile; ?>
+        <?php endforeach; ?>
     </select>
 </fieldset>
