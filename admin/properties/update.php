@@ -16,15 +16,6 @@ $sellers = Seller::all();
 
 $property = Property::getRecordById($property_id);
 
-$title = $property->title;
-$price = $property->price;
-$image = $property->image;
-$description = $property->description;
-$rooms = $property->rooms;
-$wc = $property->wc;
-$parking = $property->parking;
-$sellers_id = $property->sellers_id;
-
 $errors = Property::getErrors();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

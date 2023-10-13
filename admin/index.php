@@ -17,18 +17,20 @@ $message = $_GET["message"] ?? null;
     <h1>Real Estate Administrator</h1>
 
     <?php if ($message === '1') : ?>
-        <div class="alert correct">Property created correctly</div>
+        <div class="alert correct">Record created correctly</div>
     <?php endif ?>
     <?php if ($message === '2') : ?>
-        <div class="alert correct">Property updated correctly</div>
+        <div class="alert correct">Record updated correctly</div>
     <?php endif ?>
     <?php if ($message === '3') : ?>
-        <div class="alert correct">Property deleted correctly</div>
+        <div class="alert correct">Record deleted correctly</div>
     <?php endif ?>
 
-    
-    <h2 class="no-margin-top">Properties</h2>
+
     <a href="/admin/properties/create.php" class="button-green">New property</a>
+    <a href="/admin/sellers/create.php" class="button-yellow">New seller</a>
+
+    <h2 class="no-margin-top">Properties</h2>
     <table class="properties">
         <thead>
             <tr>
@@ -58,7 +60,6 @@ $message = $_GET["message"] ?? null;
     </table>
 
     <h2 class="no-margin-bottom">Sellers</h2>
-    <a href="/admin/sellers/create.php" class="button-green">New seller</a>
     <table class="sellers">
         <thead>
             <tr>
