@@ -2,29 +2,27 @@
 require '../includes/app.php';
 is_auth();
 
+// Classes
 use App\Property;
 use App\Seller;
 
+// Get all properties and Sellers
 $properties = Property::all();
 $sellers = Seller::all();
 
 include_template("header");
 
-$message = $_GET["message"] ?? null;
+$result = $_GET["message"] ?? null;
 ?>
 
 <main class="container section">
     <h1>Real Estate Administrator</h1>
 
-    <?php if ($message === '1') : ?>
-        <div class="alert correct">Record created correctly</div>
-    <?php endif ?>
-    <?php if ($message === '2') : ?>
-        <div class="alert correct">Record updated correctly</div>
-    <?php endif ?>
-    <?php if ($message === '3') : ?>
-        <div class="alert correct">Record deleted correctly</div>
-    <?php endif ?>
+    <?php 
+        $message = showNotification(intval($result)); 
+        if($message) { ?>
+            <p class="alert correct"><?php echo $message; ?></p>
+        <?php } ?>
 
 
     <a href="/admin/properties/create.php" class="button-green">New property</a>

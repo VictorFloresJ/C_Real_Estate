@@ -30,3 +30,23 @@ function sanitize ($html)
     $sanitized = htmlspecialchars($html);
     return $sanitized;
 }
+
+function showNotification ($code)
+{
+    $message = '';
+    switch($code) {
+        case 1:
+            $message = 'Created correctly';
+            break;
+        case 2:
+            $message = 'Updated correctly';
+            break;
+        case 3:
+            $message = 'Deleted correctly';
+            break;
+        default:
+            $message = false;
+            break;
+    }
+    return $message;
+}

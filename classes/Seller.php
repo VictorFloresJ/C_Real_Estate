@@ -27,8 +27,11 @@ class Seller extends ActiveRecord
         if (!$this->apellido) {
             self::$errors[] = "You must add a last name";
         }
-        if (!$this->phone || strlen($this->phone) > 10) {
-            self::$errors[] = "You must add valid phone number";
+        if (!$this->phone) {
+            self::$errors[] = "You must add a phone number";
+        }
+        if(!preg_match('/[0-9]{10}/', $this->phone)) {
+            self::$errors[] = "You must add a valid phone number";
         }
         return self::$errors;
     }

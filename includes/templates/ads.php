@@ -1,6 +1,10 @@
 <?php
 use App\Property; 
-$properties = Property::getRecords($limit);
+if ($limit) {
+    $properties = Property::getRecords($limit);
+} else {
+    $properties = Property::all();
+}
 ?>
 
 <div class="container-ads">
@@ -30,7 +34,3 @@ $properties = Property::getRecords($limit);
         </div><!--.ad-->
     <?php endforeach; ?>
 </div><!--.container-ads-->
-
-<?php
-mysqli_close($db);
-?>
