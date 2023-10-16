@@ -24,7 +24,7 @@ function compile_sass(done) {
         .pipe(sass())
         .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(sourcemaps.write("."))
-        .pipe(dest("build/css"));
+        .pipe(dest("public/build/css"));
     done();
 }
 function optimize_js(done) {
@@ -33,7 +33,7 @@ function optimize_js(done) {
         .pipe(plumber())
         .pipe(js())
         .pipe(sourcemaps.write("."))
-        .pipe(dest("build/js"));
+        .pipe(dest("public/build/js"));
     done();
 }
 function watch_files(done) {
@@ -45,26 +45,26 @@ function optimize_imagenes(done) {
     const parameters = {optimizationLevel: 3};
     src("src/img/**/*.{png,jpg}")
         .pipe(cache(imagemin(parameters)))
-        .pipe(dest("build/img"));
+        .pipe(dest("public/build/img"));
     done();
 }
 function to_webp(done) {
     const parameters = {quality: 50};
     src("src/img/**/*.{png,jpg}")
         .pipe(webp(parameters))
-        .pipe(dest("build/img"));
+        .pipe(dest("public/build/img"));
     done();
 }
 function to_avif(done) {
     const parameters = {quality: 50};
     src("src/img/**/*.{png,jpg}")
         .pipe(avif(parameters))
-        .pipe(dest("build/img"));
+        .pipe(dest("public/build/img"));
     done();
 }
 function mover_svg() {
     return src("src/img/**/*.svg")
-        .pipe(dest("build/img"));
+        .pipe(dest("public/build/img"));
 }
 
 exports.imagenes_ = parallel(optimize_imagenes, to_webp, to_avif, mover_svg);

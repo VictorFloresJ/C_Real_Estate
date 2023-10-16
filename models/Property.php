@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace Model;
 
 class Property extends ActiveRecord
 {
