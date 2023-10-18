@@ -1,0 +1,3 @@
+<?php 
+$property->delete();
+?>
