@@ -37,13 +37,13 @@ if(!isset($home)) {
                 <div class="right">
                     <img src="/build/img/dark-mode.svg" alt="dark mode icon" class="dark-mode-button">
                     <nav class="nav">
-                        <a href="/about-us.php">About us</a>
-                        <a href="/ads.php">Adversiments</a>
-                        <a href="/blog.php">Blog</a>
+                        <a href="/aboutus">About us</a>
+                        <a href="/properties">Adversiments</a>
+                        <a href="/blog">Blog</a>
                         <?php if ($auth) : ?>
-                            <a href="/logout.php">Log out</a>
+                            <a href="/logout">Log out</a>
                         <?php else : ?>
-                            <a href="/login.php">Log in</a>
+                            <a href="/login">Log in</a>
                         <?php endif; ?>
                     </nav>
                 </div>
@@ -54,13 +54,13 @@ if(!isset($home)) {
 
     <?php echo $content; ?>
 
-    <footer class="footer section">
+<footer class="footer section">
         <div class="container content-footer">
             <nav class="nav">
-                <a href="/about-us.php">About us</a>
-                <a href="/ads.php">Adversiments</a>
-                <a href="/blog.php">Blog</a>
-                <a href="/contact-us.php">Contact us</a>
+                <a href="/aboutus">About us</a>
+                <a href="/properties">Adversiments</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact us</a>
             </nav>
 
             <p class="copyright">Todos los derechos reservados <?php echo date("Y"); ?> &copy;</p>

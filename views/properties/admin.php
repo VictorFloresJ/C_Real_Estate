@@ -10,7 +10,7 @@
 
     <a href="/properties/create" class="button-green">New property</a>
     <a href="/sellers/create" class="button-yellow">New seller</a>
-
+    
     <h2 class="no-margin-top">Properties</h2>
     <table class="properties">
         <thead>
