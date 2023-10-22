@@ -31,7 +31,7 @@ if(!isset($home)) {
                 </a>
 
                 <div class="mobile-menu">
-                    <img src="/public/build/img/barras.svg" alt="responsive menu icon">
+                    <img src="/build/img/barras.svg" alt="responsive menu icon">
                 </div>
 
                 <div class="right">

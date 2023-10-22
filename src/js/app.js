@@ -37,6 +37,10 @@ function eventListeners() {
     window.addEventListener("resize", function() {
         responsiveNav_resize();
     });
+
+    /* Muestra campos de formulario de forma condicional */
+    const contactMethod = document.querySelectorAll(`input[name="contact-method"]`);
+    contactMethod.forEach(input => input.addEventListener('click', showContactMethods));
 }
 
 function responsiveNav() {
@@ -51,5 +55,28 @@ function responsiveNav_resize() {
         nav.classList.add("hide")
     } else {
         nav.classList.remove("hide");
+    }
+}
+
+function showContactMethods(event) {
+    const contactDiv = document.querySelector(`#contact`);
+    if (event.target.value === `email`) {
+        contactDiv.innerHTML = `
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Your email" name="email" required>
+        `;
+    } else {
+        contactDiv.innerHTML = `
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" placeholder="Your phone" name="phone">
+
+            <p>Select the date and time.</p>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" name="contact_date">
+
+            <label for="time">Time</label>
+            <input type="time" id="time" min="09:00" max="18:00" name="contact_time">
+        `;
     }
 }

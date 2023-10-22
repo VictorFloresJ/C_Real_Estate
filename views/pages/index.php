@@ -1,22 +1,6 @@
 <main class="container section">
     <h1>More about us</h1>
-    <div class="aboutus-icons">
-        <div class="icon">
-            <img src="/build/img/icono1.svg" alt="security icon" loading="lazy">
-            <h3>Security</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime impedit id quod at ad veniam dolor quae cumque quos dolorem sunt sint sapiente.</p>
-        </div><!--icon-->
-        <div class="icon">
-            <img src="/build/img/icono2.svg" alt="price icon" loading="lazy">
-            <h3>Price</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime impedit id quod at ad veniam dolor quae cumque quos dolorem sunt sint sapiente.</p>
-        </div><!--icon-->
-        <div class="icon">
-            <img src="/build/img/icono3.svg" alt="time icon" loading="lazy">
-            <h3>Time</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime impedit id quod at ad veniam dolor quae cumque quos dolorem sunt sint sapiente.</p>
-        </div><!--icon-->
-    </div> <!--.aboutus-icons-->
+    <?php include 'icons.php'; ?>
 </main>
 
 <section class="container section">
@@ -35,7 +19,7 @@
 <section class="contact-image">
     <h2>Find your dreams's house</h2>
     <p>Fill out the contact form below. A representative will contact you shortly.</p>
-    <a href="contact-us.php" class="button-yellow">Contact Us</a>
+    <a href="/contact" class="button-yellow">Contact Us</a>
 </section><!--.contact-image-->
 
 <div class="container section section-bottom">
