@@ -1,7 +1,7 @@
 <main class="container section">
     <h1>Add new seller</h1>
 
-    <a href="/admin/" class="button-green">Go back</a>
+    <a href="/admin" class="button-green">Go back</a>
 
     <?php foreach ($errors as $error) : ?>
         <div class="alert error">

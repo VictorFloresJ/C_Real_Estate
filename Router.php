@@ -19,6 +19,20 @@ class Router
 
     public function verifyRoutes()
     {
+        session_start();
+        $auth = $_SESSION['login'] ?? false;
+        
+        // Protected pages
+        $routes_protected = [
+            '/admin',
+            '/properties/create',
+            '/properties/update',
+            '/properties/delete',
+            '/sellers/create',
+            '/sellers/update',
+            '/sellers/delete'
+        ];
+
         $urlActual = $_SERVER["PATH_INFO"] ?? "/";
         $method = $_SERVER["REQUEST_METHOD"];
 
@@ -26,6 +40,11 @@ class Router
             $fn = $this->routesGET[$urlActual] ?? null;
         } else {
             $fn = $this->routesPOST[$urlActual] ?? null;
+        }
+
+        // Protect routes
+        if (in_array($urlActual, $routes_protected) && !$auth) {
+            header('Location: /');
         }
 
         if($fn) {

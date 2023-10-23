@@ -1,15 +1,7 @@
 <?php 
-if(!isset($_SESSION)) {
-    session_start();
-}
-
-$auth = $_SESSION["login"] ?? false;
-
-if(!isset($home)) {
-    $home = false;
-}
+session_start();
+$auth = $_SESSION['login'] ?? false;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

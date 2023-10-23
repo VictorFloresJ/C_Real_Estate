@@ -177,6 +177,13 @@ abstract class ActiveRecord
         return $result[0];
     }
 
+    public static function getRecordByParameter($parameter, $value)
+    {
+        $query = "SELECT * FROM " . static::$table . " WHERE $parameter = '$value' LIMIT 1";
+        $result = self::consultSQL($query);
+        return $result[0];
+    }
+
     public function syncRecord($args = [])
     {
         foreach ($args as $key => $value) {
